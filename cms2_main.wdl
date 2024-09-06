@@ -51,6 +51,8 @@ workflow cms2_main {
     Int nreps_neutral
     Int nreps
 
+    Int neutral_hapsets_trim_margin_bp = 50000
+
     Int maxAttempts = 10000000
     Int numRepsPerBlock = 1
     Int numCpusPerBlock = numRepsPerBlock
@@ -77,6 +79,7 @@ workflow cms2_main {
     recombFile=recombFile,
     nreps_neutral=nreps_neutral,
     nreps=nreps,
+    neutral_hapsets_trim_margin_bp=neutral_hapsets_trim_margin_bp,
 
     component_computation_params=component_computation_params,
 

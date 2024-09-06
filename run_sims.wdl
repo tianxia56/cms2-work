@@ -140,6 +140,7 @@ workflow run_sims_wf {
     File recombFile
     Int nreps_neutral
     Int nreps
+    Int neutral_hapsets_trim_margin_bp = 50000
     Int maxAttempts = 10000000
     Int numRepsPerBlock = 1
     Int numCpusPerBlock = numRepsPerBlock
@@ -238,6 +239,7 @@ workflow run_sims_wf {
       hapsets_bundle_id: "sim.cosi2." + modelId,
       pops_info: get_pops_info.pops_info,
       neutral_hapsets: flatten(run_neutral_sims.simulated_hapsets),
+      neutral_hapsets_trim_margin_bp: neutral_hapsets_trim_margin_bp,
       selection_hapsets: run_selection_sims.simulated_hapsets
     }
 
