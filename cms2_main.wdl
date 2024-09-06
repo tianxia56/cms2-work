@@ -63,7 +63,7 @@ workflow cms2_main {
       n_bins_ihs: 20,
       n_bins_nsl: 20,
       n_bins_delihh: 20,
-      isafe_extra_flags: "--MaxGapSize 50000 --MaxRank 301 --MaxFreq 1"
+      isafe_extra_flags: "--MaxGapSize 50001 --MaxRank 301 --MaxFreq 1"
     }
 
     #Map[String,Boolean] include_components = {"ihs": true, "ihh12": true, "nsl": true, "delihh": true, "xpehh": true, "fst": true, "delDAF": true, "derFreq": true}
