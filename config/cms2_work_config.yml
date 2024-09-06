@@ -27,7 +27,7 @@ terra:
 
 
     cms2_sim_data:
-      skip: True
+      skip: False
       wdl: cms2_main.wdl
       synopsis: run sims and compute component stats
       method_name: test-cosi2-method-01  # arbitrary until figure out how to create new methods in Terra workspace
@@ -66,7 +66,7 @@ terra:
       test_data: test.cms2_empirical_isafe_test.wdl.json
 
     cms2_empirical_woerner18neutralome:
-      skip: False
+      skip: True
       wdl: cms2_empirical.wdl
       synopsis: fetch and analyze empirical data
       method_name: cosi2_test_01  # arbitrary until figure out how to create new methods in Terra workspace
