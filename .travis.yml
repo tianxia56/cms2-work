@@ -1,57 +1,42 @@
 sudo: required
-
 dist: focal
 os: linux
-
 git:
-#  depth: 5
   submodules: false
-
 services:
-  - docker
-
+- docker
 env:
-#  - LANGUAGE=cwl
   global:
-    - PYTHONIOENCODING=UTF8
-    - LANGUAGE=wdl
-    # GH_TOKEN
-    - secure: "JvjFht00kxxoNCIrnoJptd6/7YnzmH4BTEkMoChOAYhW75zsAkPaipgvSV13gvPrIM0wvxoiAXqnFqqlR7Mn8QxoSF/2Qdr3mpQahbUIyRVQe25eW9/mGaDhVEzdYMul6XlIrUGI0wDVHGw4ngDgVwotLHpoMLbRlfdyT/5cYTsBPktQjG0ojjfPUzsPA2+uAZV16ccsC+vwZtcPiXPV7auYatQVDt7BqHNjJ5aruMrWQ4kGvX0s8qezcTOUTwrGFnfluNAXcJKMoy7Hs5AKHDeImg+fTb6U2ig7O9sPaDGFw+CHfLTnjGcC7B+L0w/84MC4M3xDflp+XC8MhmRyqFWCkTvrNhizMKr12KKQk6AfusByEJqaL9HP29FFDp/3pdqVJbVjcwb32mk63w+xwg7Odw5tHvZ2fzrFNLHlxracGrJgojdUsYSsFblYOUjv+qrXxw5iVa80TUoB+WZ35dBVjhIJcxOJ0fBm1roSB9pWmbjr6f/xS+vKlyRz1gYeY9NouwovJI3qdDKPjft/v9xK9e1fyV16e5NekJomgGBFsQ8+Upi3kKiKor/b9w2ekRL3sI+ksP7maBuz1hCWL419EV3NmiczO+gb028QfZzCSyWnl8DVDdjN6WNLeDKOXwCs/q+f6Pxar/S0TJXmPS6FbRKaTQ412rL/BELWdjA="
-
-    # QUAY_CMS_TOKEN
-    - secure: "IQzjUaWeQv7YPuglbqKAqnwQ6LIOFPxBkKR0GFaL1gOIA4dri8rWggGHf8E4TogeZ2iKzygoaePHc3ZN2zY129jiyrSCwOTwTYoLjDC/HiSUlUfwwflnEYPf1qUYxu/KcWEjl/IDYB6TzmiweV+nGNGREvEs5QS4D7Nad2Y/jdWB1F55T0QKGsFhJBfCZfnDF9NBhZNbw8SstlTyhcQVI59OHeuplE01TQ0Z+Kqkw/oSCRPT5R7Gp1i7Z8NsErpiopyfD1QkuyRJnYnDjNGGnISvHGatPMueQtuThDobDS5xcSft6wZDZw98f2XbEkIUqdYY6QjMbXlQ5LAY3+ZRS+NR7Ede2pHO1WciLmKpM+t6Gztp+Sacuhc9gP/e8PVhvIXj6NuyPEXfP5dl4NpKfk8/ntZTXRupotFy17B1GxhONTr2pOvEFx1coCx8GKLnk7ddV2gE8dmxzoL2cf0GQhDqExC9lzzDAdKE/8m2+/xhLeciwiWIXZc0sCPiZXELTh4bluxpBkGVCAUvx6qIzJZUMzlJYjvaTq94OTL/heBR3FeMM3uRR1mT8x/XRJ9BcLW7nrHRDZ3d9arvVmHBHlI4SPYNm8NSdqEATOMXolOW05SzL4VYGsAyl9X/VQYOMkBzoMwTEbRoCOvpwc5//Olv3Tf3KUriADRU2Lz/2gU="
-    # QUAY_ROBOT_TOKEN
-    - secure: "RHMHShcu0HdJgdwj1P6nAo8VLIEQC/FaVpoti7hvpF0w1JPbXpnRb/4UQLs78ZgZ25y5Z5/q1FpdiSrAKhtgv+rmr6BNLoFRk001lcGSbP9i7JayL9UxyC3Mf1nDwNKO+hEiKY9eL6EUa6mKi6ibfBl9+VgU6E9+L1RxCeRRzwTbFc6kYLrE38czOAU7cNcBvn7ulCM99PJIjFgbt/wIzu2T9rjCUtj8KzALKDILX8lca9f+/8oV26zvYSsk5/lyegMeZ/sdEfdbv4lebPPAXBf1AoG2TICXGNAMcIREu+3qSCkMrfhdQRZ0CNBKQEPqpYUda0uOCDp3+Mtg0tUquXEN6hORahPk36TOBoxeS5V5qWs450pp9HcbAustztqd/X4KiF1m8nAvTjdVDlWoUhS59xMHpkta0nZtyRxLwEHEzozn0+feWT/29mJmp7c10soaf8o3/E03vvUSNaSZxekafEuiRepAcCrUMY80wleg9TgPZTdHrO102d1J2N3QZZ56oWUxY6qpKwk0+kZShPT8H59Ng8JPPWXlWC5vCnScm5wm78t99bWKzv4lnO2ls0pASeGd510dr2rp3AKpC2Kl2sdKexuMQUBeay/EL3tBMBd6hImbz/cqD9SuEhQZ0XW2YOWJJ5qcrFSgpdtP82kgHDO3sPUNMEkm6YBLgXU="
-
+  - PYTHONIOENCODING=UTF8
+  - LANGUAGE=wdl
+  - secure: JvjFht00kxxoNCIrnoJptd6/7YnzmH4BTEkMoChOAYhW75zsAkPaipgvSV13gvPrIM0wvxoiAXqnFqqlR7Mn8QxoSF/2Qdr3mpQahbUIyRVQe25eW9/mGaDhVEzdYMul6XlIrUGI0wDVHGw4ngDgVwotLHpoMLbRlfdyT/5cYTsBPktQjG0ojjfPUzsPA2+uAZV16ccsC+vwZtcPiXPV7auYatQVDt7BqHNjJ5aruMrWQ4kGvX0s8qezcTOUTwrGFnfluNAXcJKMoy7Hs5AKHDeImg+fTb6U2ig7O9sPaDGFw+CHfLTnjGcC7B+L0w/84MC4M3xDflp+XC8MhmRyqFWCkTvrNhizMKr12KKQk6AfusByEJqaL9HP29FFDp/3pdqVJbVjcwb32mk63w+xwg7Odw5tHvZ2fzrFNLHlxracGrJgojdUsYSsFblYOUjv+qrXxw5iVa80TUoB+WZ35dBVjhIJcxOJ0fBm1roSB9pWmbjr6f/xS+vKlyRz1gYeY9NouwovJI3qdDKPjft/v9xK9e1fyV16e5NekJomgGBFsQ8+Upi3kKiKor/b9w2ekRL3sI+ksP7maBuz1hCWL419EV3NmiczO+gb028QfZzCSyWnl8DVDdjN6WNLeDKOXwCs/q+f6Pxar/S0TJXmPS6FbRKaTQ412rL/BELWdjA=
+  - secure: IQzjUaWeQv7YPuglbqKAqnwQ6LIOFPxBkKR0GFaL1gOIA4dri8rWggGHf8E4TogeZ2iKzygoaePHc3ZN2zY129jiyrSCwOTwTYoLjDC/HiSUlUfwwflnEYPf1qUYxu/KcWEjl/IDYB6TzmiweV+nGNGREvEs5QS4D7Nad2Y/jdWB1F55T0QKGsFhJBfCZfnDF9NBhZNbw8SstlTyhcQVI59OHeuplE01TQ0Z+Kqkw/oSCRPT5R7Gp1i7Z8NsErpiopyfD1QkuyRJnYnDjNGGnISvHGatPMueQtuThDobDS5xcSft6wZDZw98f2XbEkIUqdYY6QjMbXlQ5LAY3+ZRS+NR7Ede2pHO1WciLmKpM+t6Gztp+Sacuhc9gP/e8PVhvIXj6NuyPEXfP5dl4NpKfk8/ntZTXRupotFy17B1GxhONTr2pOvEFx1coCx8GKLnk7ddV2gE8dmxzoL2cf0GQhDqExC9lzzDAdKE/8m2+/xhLeciwiWIXZc0sCPiZXELTh4bluxpBkGVCAUvx6qIzJZUMzlJYjvaTq94OTL/heBR3FeMM3uRR1mT8x/XRJ9BcLW7nrHRDZ3d9arvVmHBHlI4SPYNm8NSdqEATOMXolOW05SzL4VYGsAyl9X/VQYOMkBzoMwTEbRoCOvpwc5//Olv3Tf3KUriADRU2Lz/2gU=
+  - secure: RHMHShcu0HdJgdwj1P6nAo8VLIEQC/FaVpoti7hvpF0w1JPbXpnRb/4UQLs78ZgZ25y5Z5/q1FpdiSrAKhtgv+rmr6BNLoFRk001lcGSbP9i7JayL9UxyC3Mf1nDwNKO+hEiKY9eL6EUa6mKi6ibfBl9+VgU6E9+L1RxCeRRzwTbFc6kYLrE38czOAU7cNcBvn7ulCM99PJIjFgbt/wIzu2T9rjCUtj8KzALKDILX8lca9f+/8oV26zvYSsk5/lyegMeZ/sdEfdbv4lebPPAXBf1AoG2TICXGNAMcIREu+3qSCkMrfhdQRZ0CNBKQEPqpYUda0uOCDp3+Mtg0tUquXEN6hORahPk36TOBoxeS5V5qWs450pp9HcbAustztqd/X4KiF1m8nAvTjdVDlWoUhS59xMHpkta0nZtyRxLwEHEzozn0+feWT/29mJmp7c10soaf8o3/E03vvUSNaSZxekafEuiRepAcCrUMY80wleg9TgPZTdHrO102d1J2N3QZZ56oWUxY6qpKwk0+kZShPT8H59Ng8JPPWXlWC5vCnScm5wm78t99bWKzv4lnO2ls0pASeGd510dr2rp3AKpC2Kl2sdKexuMQUBeay/EL3tBMBd6hImbz/cqD9SuEhQZ0XW2YOWJJ5qcrFSgpdtP82kgHDO3sPUNMEkm6YBLgXU=
 branches:
   except:
-    - /.*-staging$/
-    - /^staging-.*/
-
+  - is-branch-info
 stages:
-  - main
-
-branches:
-  except:
-    - is-branch-info
-
+- main
 jobs:
   fast_finish: true
   include:
-    
-    - language: python
-      stage: main
-      python: "3.8"
-      before_install:
-        - openssl aes-256-cbc -K $encrypted_cd0220f97c1a_key -iv $encrypted_cd0220f97c1a_iv -in terra/gcloud-config.tar.gz.enc -out terra/gcloud-config.tar.gz -d
-        - sudo apt-get update || true
-        - sudo apt-get -y install openjdk-8-jre-headless
-      install:
-        - pip3 -q install firecloud PyYAML
-      script:
-        - set -e
-        - ./travis/test-wdl.sh
-        - tar -xzf terra/gcloud-config.tar.gz -C $HOME
-        - git submodule init docker/cms2-docker-component-stats
-        - git submodule update --recursive docker/cms2-docker-component-stats
-        - ./terra/terra_utils.py deploy_to_terra
+  - language: python
+    stage: main
+    python: '3.8'
+    before_install:
+    - openssl aes-256-cbc -K $encrypted_cd0220f97c1a_key -iv $encrypted_cd0220f97c1a_iv
+      -in terra/gcloud-config.tar.gz.enc -out terra/gcloud-config.tar.gz -d
+    - sudo apt-get update || true
+    - sudo apt-get -y install openjdk-8-jre-headless
+    install:
+    - pip3 -q install firecloud PyYAML
+    script:
+    - set -e
+    - "./travis/test-wdl.sh"
+    - tar -xzf terra/gcloud-config.tar.gz -C $HOME
+    - git submodule init docker/cms2-docker-component-stats
+    - git submodule update --recursive docker/cms2-docker-component-stats
+    - "./terra/terra_utils.py deploy_to_terra"
+before_install:
+- openssl aes-256-cbc -K $encrypted_6f4cffd5a0cd_key -iv $encrypted_6f4cffd5a0cd_iv
+  -in gcloud-config.tar.gz.enc -out gcloud-config.tar.gz -d
