@@ -112,7 +112,7 @@ def update_wdl_imports(staging_target):
 def customize_wdls_for_git_commit():
     """Upload files from this commit to the cloud, and create customized WDLs referencing this commit's version of files.   """
 
-    TERRA_GS_BUCKET='fc-21baddbc-5142-4983-a26e-7d85a72c830b'
+    TERRA_GS_BUCKET='fc-97de97ff-f4ee-414a-bf2d-a5f045b20a79'
     TRAVIS_COMMIT=os.environ['TRAVIS_COMMIT']
     TRAVIS_BRANCH=os.environ['TRAVIS_BRANCH']
     TRAVIS_REPO_SLUG=os.environ['TRAVIS_REPO_SLUG']

@@ -1,7 +1,7 @@
 terra:
-  namespace: um1-encode-y2s1
-  workspace: selection-sim
-  gs_bucket: fc-21baddbc-5142-4983-a26e-7d85a72c830b
+  namespace: tianxia
+  workspace: cms2
+  gs_bucket: fc-97de97ff-f4ee-414a-bf2d-a5f045b20a79
   users:
     - sgosai@broadinstitute.org
     - sreilly@broadinstitute.org
