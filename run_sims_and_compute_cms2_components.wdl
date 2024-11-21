@@ -204,5 +204,9 @@ workflow run_sims_and_compute_cms2_components_wf {
     #Array[CMS2_Components_Result?] sel_components_results = sel_components_result
     Array[File] all_hapsets_component_stats_h5_blocks = 
     component_stats_for_sel_sims_wf.all_hapsets_component_stats_h5_blocks
+    Array[File] all_hapsets_component_stats_tsv_gz_blocks =
+    component_stats_for_sel_sims_wf.all_hapsets_component_stats_tsv_gz_blocks
+    Array[File] all_hapsets_metadata_tsv_gz_blocks =
+    component_stats_for_sel_sims_wf.all_hapsets_metadata_tsv_gz_blocks
   }
 }

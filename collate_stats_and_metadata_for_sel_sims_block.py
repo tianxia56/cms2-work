@@ -167,7 +167,9 @@ def parse_args():
     parser.add_argument('--hapsets-component-stats-h5-fname', required=True,
                         help='name of HDF5 file to which to save component stats and metadata')
     parser.add_argument('--hapsets-metadata-tsv-gz-fname', required=True,
-                        help='name of tsv file to which to save hapset metadata')
+                        help='name of .tsv.gz file to which to save hapset metadata')
+    parser.add_argument('--hapsets-component-stats-tsv-gz-fname', required=True,
+                        help='name of .tsv.gz file to which to save component stats')
 
     return parser.parse_args()
 
@@ -409,7 +411,9 @@ def collate_stats_and_metadata_for_all_sel_sims(args):
 
     pd.set_option('io.hdf.default_format','table')
     h5_fname = args.hapsets_component_stats_h5_fname
+    tsv_gz_fname = args.hapsets_component_stats_tsv_gz_fname
 
+    hapset_compstats_list = []
     with pd.HDFStore(h5_fname, mode='w', complevel=9, fletcher32=True) as store:
         for hapset_compstats_tsv, hapset_replica_info_json in zip(inps['sel_normed_and_collated'], inps['replica_infos']):
             hapset_compstats = pd.read_table(hapset_compstats_tsv, low_memory=False)
@@ -417,6 +421,7 @@ def collate_stats_and_metadata_for_all_sel_sims(args):
             chk(len(hapset_id) < args.max_hapset_id_len, f'Hapset id too long: {hapset_id}')
             hapset_compstats = hapset_compstats.set_index(['hapset_id', 'pos'], verify_integrity=True)
             #hapset_dfs.append(hapset_compstats)
+            hapset_compstats_list.append(hapset_compstats)
             store.append('hapset_data', hapset_compstats, min_itemsize={'hapset_id': args.max_hapset_id_len})
 
             hapset_replica_info = _json_loadf(hapset_replica_info_json)
@@ -447,6 +452,9 @@ def collate_stats_and_metadata_for_all_sel_sims(args):
             
     metadata_fname = args.hapsets_metadata_tsv_gz_fname
     hapsets_metadata.to_csv(metadata_fname, na_rep='nan', sep='\t')
+
+    pd.concat(hapset_compstats_list).to_csv(tsv_gz_fname, sep='\t', na_rep='nan')
+
 # end: def collate_stats_and_metadata_for_all_sel_sims(args)
 
 if __name__=='__main__':
