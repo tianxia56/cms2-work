@@ -298,19 +298,19 @@ task collate_stats_and_metadata_for_sel_sims_block {
   }
   File collate_stats_and_metadata_for_sel_sims_block_script = "./collate_stats_and_metadata_for_sel_sims_block.py"
   Int max_hapset_id_len = 256
-  String hapsets_component_stats_h5_fname = inp.out_fnames_prefix + ".all_component_stats.h5"
+  #String hapsets_component_stats_h5_fname = inp.out_fnames_prefix + ".all_component_stats.h5"
   String hapsets_component_stats_tsv_gz_fname = inp.out_fnames_prefix + ".all_component_stats.tsv.gz"
   String hapsets_metadata_tsv_gz_fname = inp.out_fnames_prefix + ".hapsets_metadata.tsv.gz"
   command <<<
     set -ex -o pipefail
 
     python3 "~{collate_stats_and_metadata_for_sel_sims_block_script}" --input-json "~{write_json(inp)}" \
-       --max-hapset-id-len ~{max_hapset_id_len} --hapsets-component-stats-h5-fname "~{hapsets_component_stats_h5_fname}" \
+       --max-hapset-id-len ~{max_hapset_id_len} \
        --hapsets-component-stats-tsv-gz-fname "~{hapsets_component_stats_tsv_gz_fname}" \
        --hapsets-metadata-tsv-gz-fname "~{hapsets_metadata_tsv_gz_fname}"
   >>>
   output {
-    File hapsets_component_stats_h5 = hapsets_component_stats_h5_fname
+    #File hapsets_component_stats_h5 = hapsets_component_stats_h5_fname
     File hapsets_component_stats_tsv_gz = hapsets_component_stats_tsv_gz_fname
     File hapsets_metadata_tsv_gz = hapsets_metadata_tsv_gz_fname
   }
