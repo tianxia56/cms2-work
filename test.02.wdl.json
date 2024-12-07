@@ -1,9 +1,9 @@
 {
-    "cms2_main.nreps_neutral": 8,
-    "cms2_main.nreps": 8,
-    "cms2_main.numRepsPerBlock": 4,
+    "cms2_main.nreps_neutral": 4,
+    "cms2_main.nreps": 4,
+    "cms2_main.numRepsPerBlock": 2,
     "cms2_main.paramFile_demographic_model": "./best_default_112115_825am__demography.par",
     "cms2_main.paramFile_neutral": "./test.neutral.cosiParams",
-    "cms2_main.paramFiles_selection": ["./sel1_origin1.par", "./sel3_origin2.par"],
+    "cms2_main.paramFiles_selection": "./sel1_origin1.par",
     "cms2_main.recombFile": "./test_recom.recom"
 }
