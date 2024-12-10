@@ -105,9 +105,9 @@ workflow cms2_main {
     #Int n_neutral_sims_succeeded = length(select_all(compute_cms2_components_for_neutral.ihs[0]))
 # *** Component scores
     #Array[File?] sel_normed_and_collated = main_call.sel_normed_and_collated
-    Array[File] all_hapsets_component_stats_h5_blocks = main_call.all_hapsets_component_stats_h5_blocks
+    #Array[File] all_hapsets_component_stats_h5_blocks = main_call.all_hapsets_component_stats_h5_blocks
     Array[File] all_hapsets_component_stats_tsv_gz_blocks = main_call.all_hapsets_component_stats_tsv_gz_blocks
-    Array[File] all_hapsets_metadata_tsv_gz_blocks = main_call.all_hapsets_metadata_tsv_gz_blocks
+    #Array[File] all_hapsets_metadata_tsv_gz_blocks = main_call.all_hapsets_metadata_tsv_gz_blocks
 
     #Array[CMS2_Components_Result?] sel_components_results = sel_components_result
   }

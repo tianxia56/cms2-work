@@ -1,0 +1,35 @@
+length 3000000 
+mutation_rate 1.25e-08 
+recomb_file /Users/vitti/Desktop/cms_ml_2/params/test_recom.recom 
+gene_conversion_relative_rate 2.3 
+
+pop_define 1 YRI 
+sample_size 1 172 
+pop_size 1 30000 
+pop_define 2 CEU 
+sample_size 2 172 
+pop_size 2 10000 
+pop_define 3 CHB 
+sample_size 3 172 
+pop_size 3 25000 
+pop_define 4 BEB 
+sample_size 4 172 
+pop_size 4 30000
+
+pop_event split "BEB split" 3 4 470
+pop_event split "CHB split" 2 3 1360
+pop_event split "CEU split" 1 2 3400
+pop_event admix "SAS admix" 4 2 50 0.5
+
+pop_event migration_rate "no mig YRI->CEU" 1 2 3399 0 
+pop_event migration_rate "no mig CEU->YRI" 2 1 3399 0 
+pop_event migration_rate "no mig YRI->CHB" 1 3 1359 0 
+pop_event migration_rate "no mig CHB->YRI" 3 1 1359 0 
+pop_event migration_rate "no mig CEU->CHB" 2 3 1359 0 
+pop_event migration_rate "no mig CHB->CEU" 3 2 1359 0 
+pop_event migration_rate "no mig YRI->BEB" 1 4 469 0 
+pop_event migration_rate "no mig BEB->YRI" 4 1 469 0 
+pop_event migration_rate "no mig CEU->BEB" 2 4 469 0 
+pop_event migration_rate "no mig BEB->CEU" 4 2 469 0 
+pop_event migration_rate "no mig CHB->BEB" 3 4 469 0 
+pop_event migration_rate "no mig BEB->CHB" 4 3 469 0

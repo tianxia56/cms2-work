@@ -34,7 +34,7 @@ terra:
       synopsis: run sims and compute component stats
       method_name: test-cosi2-method-01  # arbitrary until figure out how to create new methods in Terra workspace
       config_name: cms2-sim-data
-      test_data: test.02.wdl.json
+      test_data: test.03.wdl.json
 
     cms2_sim_isafe_orig:
       skip: True
