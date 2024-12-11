@@ -312,7 +312,7 @@ task collate_stats_and_metadata_for_sel_sims_block {
   output {
     # File hapsets_component_stats_h5 = hapsets_component_stats_h5_fname
     File hapsets_component_stats_tsv_gz = hapsets_component_stats_tsv_gz_fname
-    File hapsets_metadata_tsv_gz = hapsets_metadata_tsv_gz_fname
+    # File hapsets_metadata_tsv_gz = hapsets_metadata_tsv_gz_fname
   }
   runtime {
     docker: "quay.io/broad_cms_ci/cms:cms2-docker-component-stats-aced0918ac0afd34f7cbb3031e3b044ac7e686cc"

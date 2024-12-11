@@ -398,9 +398,9 @@ Layout:
 
 """
     pd.set_option('io.hdf.default_format','table')
-    # with pd.HDFStore(out_hdf5, complevel=9) as store:
-    #     store['data'] = hapsets_data
-    #     store['metadata'] = hapsets_metadata
+    with pd.HDFStore(out_hdf5, complevel=9) as store:
+        store['data'] = hapsets_data
+        store['metadata'] = hapsets_metadata
     
 
 def collate_stats_and_metadata_for_all_sel_sims(args):

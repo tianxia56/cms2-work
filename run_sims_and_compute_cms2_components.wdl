@@ -206,7 +206,7 @@ workflow run_sims_and_compute_cms2_components_wf {
     # component_stats_for_sel_sims_wf.all_hapsets_component_stats_h5_blocks
     Array[File] all_hapsets_component_stats_tsv_gz_blocks =
     component_stats_for_sel_sims_wf.all_hapsets_component_stats_tsv_gz_blocks
-    Array[File] all_hapsets_metadata_tsv_gz_blocks =
-    component_stats_for_sel_sims_wf.all_hapsets_metadata_tsv_gz_blocks
+    # Array[File] all_hapsets_metadata_tsv_gz_blocks =
+    # component_stats_for_sel_sims_wf.all_hapsets_metadata_tsv_gz_blocks
   }
 }
